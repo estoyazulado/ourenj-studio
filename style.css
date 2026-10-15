@@ -1,0 +1,1811 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+:root {
+  --bg-color: #ffebde;
+  --text-color: #4d0e13;
+  --main-color: #930630;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color)
+}
+
+a {
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 60px;
+    z-index: 1000;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-family: Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    line-height: 18px;
+    width: 120px;
+    font-weight: normal;
+    text-align: center
+}
+
+.logo span {
+    display: block;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-align: center
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+
+    background: var(--bg-color);
+    padding: 8px 14px;
+    border-radius: 40px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Navigation links */
+
+.navbar a {
+    color: var(--text-color);
+    font-family: Teachers, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 10px 8px;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+.menu-profile-icons {
+    display: flex;
+}
+#user-profile{
+    color: white;
+    font-size: 3rem;
+}
+#menu-icon {
+    font-size: 5rem;
+    color: white;
+    display: none;
+}
+
+
+
+/* =========================
+   BOOK NOW BUTTON
+========================= */
+
+.navbar .booknow-btn {
+    background: var(--main-color);
+    color: white;
+
+    padding: 10px 22px;
+    border-radius: 30px;
+
+    box-shadow: 0 3px 8px rgba(147, 6, 48, 0.25);
+}
+
+
+/* Book Now hover */
+
+.navbar .booknow-btn:hover {
+    background: #740524;
+    color: white;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+
+#banner {
+    width: 100%;
+    height: 470px;
+    position: relative;
+}
+
+.home-banner {
+    width: 100%;
+    height: 420px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Banner Image */
+.home-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(75%);
+}
+
+
+/* Banner Text */
+.home-banner h2 {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    text-align: center;
+
+    color: white;
+    font-family: "DM Serif Display", serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+
+.home-banner h3 {
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    text-align: center;
+
+    color: white;
+    font-family: Teachers, sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+
+/* Banner Buttons */
+
+.banner-buttons {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.book-home-btn,
+.services-home-btn {
+
+    position: absolute;
+    top: 65%;
+
+    padding: 12px 35px;
+    border-radius: 30px;
+
+    font-family: Teachers, sans-serif;
+    font-size: 14px;
+
+    transition: .3s ease;
+}
+
+
+/* Book button */
+
+.book-home-btn {
+    left: 38%;
+
+    background: #a20d3b;
+    color:white;
+}
+
+
+.book-home-btn:hover {
+    background:#700628;
+}
+
+
+/* Services button */
+
+.services-home-btn {
+
+    left: 53%;
+
+    border:2px solid white;
+    color:white;
+}
+
+
+.services-home-btn:hover {
+
+    background:white;
+    color:#930630;
+
+}
+
+/* =========================
+   DESCRIPTION SECTION
+========================= */
+
+
+#desc {
+
+    padding:80px 10%;
+}
+
+
+.home-desc {
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:60px;
+}
+
+.home-desc iframe {
+
+
+    border:none;
+    background:white;
+}
+
+
+/* Description Text */
+
+
+.home-desc h3 {
+
+    font-family: "DM Serif Display", serif;
+    font-size:45px;
+    color: var(--text-color);
+    margin-bottom:20px;
+
+}
+
+.desc-text {
+    display:flex;
+    flex-direction:column;
+}
+
+.home-desc p {
+    width:430px;
+    font-family:Teachers,sans-serif;
+    font-size:16px;
+    line-height:1.8;
+    color:#8b2949;
+
+}
+
+/* =========================
+   WHY CHOOSE US SECTION
+========================= */
+
+
+#desc2 {
+
+    background:#801638;
+    width:100%;
+    padding:50px 10%;
+
+}
+
+
+.home-desc2 {
+
+    text-align:center;
+}
+
+/* Title */
+
+.home-desc2 h3 {
+
+    color:white;
+    font-family: "DM Serif Display", serif;
+    font-size:35px;
+    margin-bottom:45px;
+
+}
+
+/* Three boxes */
+
+.desc2-container {
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:100px;
+
+}
+
+
+/* Individual item */
+
+.desc2-box {
+
+    width:180px;
+    text-align:center;
+    color:white;
+
+}
+
+
+/* Icon */
+
+.desc2-box img {
+
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:20px;
+
+}
+
+
+/* Small title */
+
+.desc2-box h4 {
+
+    color:white;
+    font-family:Teachers,sans-serif;
+    font-size:16px;
+    margin-bottom:8px;
+
+}
+
+/* Description */
+
+.desc2-box p {
+
+    color:white;
+    font-family:Teachers,sans-serif;
+    font-size:14px;
+
+}
+
+/* =========================
+   HOME GALLERY CAROUSEL
+========================= */
+
+.home-gallery-section {
+    background: var(--bg-color);
+    padding: 65px 4% 90px;
+    text-align: center;
+}
+
+.home-gallery-section h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 58px;
+    color: #801638;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+
+/* Whole carousel */
+
+.gallery-carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* Container for 3 images */
+
+.gallery-carousel-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+
+/* Image cards */
+
+.gallery-card {
+    background: #f4f2ed;
+    border: 1px solid #999;
+    padding: 12px 12px 60px;
+    overflow: hidden;
+
+    transition: transform 0.35s ease,
+                opacity 0.35s ease;
+}
+
+
+/* Left and right */
+
+.side-card {
+    width: 250px;
+    height: 290px;
+}
+
+
+/* Big middle image */
+
+.center-card {
+    width: 285px;
+    height: 335px;
+}
+
+
+/* Images */
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Arrows */
+
+.gallery-arrow {
+    background: transparent;
+    border: none;
+    color: #801638;
+
+    font-size: 65px;
+    font-weight: 300;
+
+    cursor: pointer;
+    padding: 15px;
+
+    transition: transform 0.25s ease,
+                color 0.25s ease;
+}
+
+.gallery-arrow:hover {
+    color: #a20d3b;
+    transform: scale(1.15);
+}
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews-section {
+    background: var(--bg-color);
+    padding: 20px 3% 100px;
+    text-align: center;
+}
+
+
+/* Small line above title */
+
+.reviews-line {
+    width: 40%;
+    height: 2px;
+    background: #a20d3b;
+    margin: 0 auto 80px;
+}
+
+
+/* Reviews heading */
+
+.reviews-section h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 60px;
+    font-weight: normal;
+    color: #801638;
+    margin-bottom: 60px;
+}
+
+
+/* Reviews wrapper */
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* All cards */
+
+.review-card {
+    background: #aa1249;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(95, 10, 40, 0.18);
+}
+
+
+/* Side cards */
+
+.review-side {
+    width: 390px;
+    height: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Middle card */
+
+.review-main {
+    width: 500px;
+    min-height: 395px;
+
+    background: #aa1249;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* User icon */
+
+.review-icon {
+    font-size: 70px;
+    color: #ffebde;
+    margin-bottom: 5px;
+}
+
+
+/* Name */
+
+.review-card h3 {
+    font-family: Teachers, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 5px;
+}
+
+
+/* Stars */
+
+.review-stars {
+    color: #ffd43b;
+
+    font-size: 39px;
+    letter-spacing: 3px;
+
+    line-height: 1;
+    margin: 5px 0 20px;
+}
+
+
+/* Review text */
+
+.review-card p {
+    font-family: Teachers, sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: white;
+
+    max-width: 400px;
+}
+
+
+/* =========================
+   GALLERY BANNER
+========================= */
+
+
+#banner {
+    width:100%;
+
+}
+
+.gallery-banner {
+
+    width:100%;
+    height:400px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+
+}
+
+.gallery-banner img {
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(80%);
+
+}
+
+.gallery-banner h2 {
+
+    position:absolute;
+    top:35%;
+    width:100%;
+    text-align:center;
+    color:#a20d3b;
+    font-family: "Pinyon Script", cursive;
+    font-size:90px;
+    font-weight:normal;
+
+
+}
+
+
+.gallery-banner h4 {
+
+    position:absolute;
+    top:65%;
+    width:100%;
+    text-align:center;
+    color:#a20d3b;
+    font-family:Teachers;
+    font-size:20px;
+    letter-spacing:5px;
+
+}
+
+/* =========================
+   GALLERY CATEGORY NAV
+========================= */
+
+
+#nav {
+
+    padding:40px 0;
+}
+
+.gallery-nav {
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+
+}
+
+.gallery-nav a {
+
+    font-family:Teachers;
+    font-size:25px;
+    letter-spacing:3px;
+    color:#9b1745;
+
+}
+
+.gallery-nav a:first-child {
+
+    font-weight:bold;
+
+}
+
+.gallery-nav span {
+
+    color:#9b1745;
+    font-size:35px;
+
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+
+.gallery-section {
+
+    padding:20px 7% 80px;
+}
+
+.gallery-section h2 {
+
+    text-align:center;
+    color:#8b2949;
+    font-family:Georgia,serif;
+    font-size:40px;
+    margin-bottom:40px;
+
+}
+
+/* Masonry style */
+
+.gallery-grid {
+
+    columns:3;
+    column-gap:25px;
+
+}
+
+.gallery-grid img {
+
+    width:100%;
+    margin-bottom:25px;
+    border-radius:10px;
+    break-inside:avoid;
+    transition:.3s ease;
+
+}
+
+.gallery-grid img:hover {
+
+    transform:scale(1.03);
+
+}
+
+
+/* ======================
+   SERVICE BANNER
+====================== */
+
+
+#service-banner{
+
+    width:100%;
+
+}
+
+
+.service-banner{
+
+    width:100%;
+    height:430px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+
+.service-banner img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+
+
+.service-banner h1{
+
+    position:absolute;
+    top:35%;
+    left:8%;
+    color:#a20d3b;
+    font-family:"DM Serif Display", serif;
+    font-size:100px;
+
+}
+
+/* =========================
+   OUR STORY SECTION
+========================= */
+
+.story-section {
+    width: 100%;
+    background: var(--bg-color);
+    padding: 60px 8% 70px;
+}
+
+
+/* Quote Banner */
+
+.story-quote {
+    max-width: 900px;
+    margin: 0 auto 25px;
+
+    background: #4d0e13;
+
+    text-align: center;
+
+    padding: 45px 30px;
+}
+
+
+.story-quote h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 38px;
+    font-weight: normal;
+
+    line-height: 1.25;
+
+    color: #faeced;
+}
+
+
+.story-quote span {
+    display: block;
+
+    width: 70px;
+    height: 2px;
+
+    background: #4d0e13;
+
+    margin: 18px auto 0;
+}
+
+
+/* About Area */
+
+.story-about {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.12fr;
+
+    gap: 15px;
+}
+
+
+/* Left image */
+
+.story-image {
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+}
+
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Right text */
+
+.story-text {
+    background: #4d0e13;
+
+    padding: 35px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.story-text h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 39px;
+
+    font-weight: normal;
+
+    color: #fff6f9;
+
+    margin-bottom: 24px;
+}
+
+
+.story-text p {
+    font-family: Teachers, Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #fff5f9;
+
+    margin-bottom: 14px;
+}
+
+
+
+.story-text h4 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 16px;
+
+    font-weight: normal;
+
+    color: #fff9fb;
+
+    margin-top: 8px;
+}
+
+
+/* Story Carousel */
+
+.story-carousel {
+    max-width: 950px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* Holds exactly five images */
+
+.story-carousel-track {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* Circular images */
+
+.story-circle {
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #edcfd1;
+
+    border: 4px solid
+        rgba(255, 255, 255, 0.65);
+
+    transition: 0.3s ease;
+}
+
+
+.story-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.story-circle:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(77, 14, 19, 0.15);
+}
+
+
+/* Carousel arrows */
+
+.story-arrow {
+    border: none;
+
+    background: transparent;
+
+    color: #4d0e13;
+
+    cursor: pointer;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 42px;
+
+    transition: 0.25s ease;
+}
+
+
+.story-arrow:hover {
+    color: #4d0e13;
+
+    transform: scale(1.15);
+}
+
+
+/* Social Media */
+
+.story-socials {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.story-socials a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #4d0e13;
+
+    color: white;
+
+    font-size: 21px;
+
+    border-radius: 4px;
+
+    transition: 0.3s ease;
+}
+
+
+.story-socials a:hover {
+    background: #801638;
+
+    transform: translateY(-3px);
+}
+
+
+/* ======================
+ SERVICE CATEGORY NAV
+====================== */
+
+#service-nav{
+    padding:40px 0;
+}
+
+
+.service-menu{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+}
+
+.service-menu a{
+
+    color:#9b1745;
+    font-size:25px;
+    font-family:Teachers;
+}
+
+.service-menu a:first-child{
+
+    font-weight:bold;
+}
+
+.service-menu span{
+
+    color:#9b1745;
+    font-size:30px;
+}
+
+/* ======================
+ SERVICE LIST
+====================== */
+
+
+.services-list{
+
+    padding:30px 8%;
+}
+
+
+
+.service-item{
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+    margin-bottom:70px;
+    padding-bottom:40px;
+    border-bottom:1px solid #e6b8c5;
+}
+
+.service-item img{
+
+    width:280px;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.service-info{
+
+    flex:1;
+}
+
+
+.service-info h2{
+
+    font-family:"DM Serif Display", serif;
+    font-size:32px;
+    color:#7d1939;
+}
+
+
+
+.service-info p{
+
+    color:#9b1745;
+    font-size:18px;
+    line-height:1.7;
+    text-align:justify;
+}
+
+.service-info ul{
+
+    color:#9b1745;
+    line-height:1.8;
+}
+
+.service-bottom{
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:30px;
+}
+
+.service-bottom h3{
+
+    color:#9b1745;
+    font-size:35px;
+}
+
+.service-bottom button{
+
+   background:#57173f;
+    color:white;
+    border:none;
+    padding:12px 35px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.service-bottom button:hover{
+
+    background:#8b2949;
+}
+
+.section-title{
+
+    text-align:center;
+    color:#8b2949;
+    font-size:40px;
+    font-family:"DM Serif Display", serif;
+}
+
+/* ======================
+   BOOKING BANNER
+====================== */
+
+#booking-banner{
+    width:100%;
+
+}
+
+.booking-banner{
+
+    width:100%;
+    height:430px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.booking-banner img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.booking-banner h1{
+
+    position:absolute;
+    top:35%;
+    left:8%;
+    font-family:"DM Serif Display", serif;
+    font-size:100px;
+    color:#a20d3b;
+
+}
+
+/* ======================
+    BOOKING CARDS
+====================== */
+
+.booking-list{
+    padding:70px 8%;
+}
+
+.booking-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:45px;
+
+}
+
+.booking-card{
+
+    background:#f8d6bd;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s ease;
+}
+
+.booking-card:hover{
+    transform:translateY(-8px);
+}
+
+.booking-card img{
+
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+
+.booking-content{
+
+    padding:25px;
+}
+
+.booking-content h2{
+
+    font-family:"DM Serif Display",serif;
+    color:#7d1939;
+    font-size:30px;
+    margin-bottom:10px;
+
+}
+
+.booking-content p{
+
+    color:#9b1745;
+    font-size:17px;
+}
+
+.booking-bottom{
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:25px;
+    margin-top:25px;
+}
+
+.booking-bottom h3{
+
+    color:#8b2949;
+    font-size:25px;
+}
+
+.booking-bottom button{
+
+    background:#a20d57;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.booking-bottom button:hover{
+
+    background:#70103b;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+    background: #6f1232;
+    color: white;
+    font-family: Teachers, Arial, sans-serif;
+}
+
+
+/* =========================
+   TOP FOOTER
+========================= */
+
+.footer-main {
+
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 1.1fr 0.9fr;
+
+    gap: 90px;
+
+    padding: 70px 7% 65px;
+
+}
+
+
+/* =========================
+   FOOTER COLUMNS
+========================= */
+
+.footer-column {
+    min-width: 0;
+}
+
+
+.footer-column h3 {
+
+    font-family: Teachers, serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    margin-bottom: 28px;
+}
+
+
+/* Normal footer text */
+
+.footer-column p {
+
+    color: #f7dce4;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   OFFICE / MAP
+========================= */
+
+.footer-map {
+
+    width: 100%;
+    max-width: 320px;
+    height: 190px;
+
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    border: 3px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.footer-map iframe {
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    display: block;
+}
+
+
+/* Contact rows */
+
+.footer-office p {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+}
+
+
+.footer-office p i {
+
+    color: #f4b4c8;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   SAY HELLO
+========================= */
+
+.footer-description {
+
+    max-width: 330px;
+
+    margin-bottom: 14px;
+}
+
+
+.footer-email {
+
+    display: inline-block;
+
+    color: white;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-email:hover {
+
+    color: #f4b4c8;
+}
+
+
+/* Booking button */
+
+.footer-book-btn {
+
+    display: block;
+
+    width: fit-content;
+
+    background: #ffebde;
+
+    color: #801638;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-book-btn:hover {
+
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.footer-social > p {
+
+    max-width: 300px;
+
+    margin-bottom: 24px;
+}
+
+
+/* Icons */
+
+.social-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+.social-icons a {
+
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 22px;
+
+    transition: 0.3s ease;
+}
+
+
+.social-icons a:hover {
+
+    background: #ffebde;
+
+    color: #801638;
+
+    border-color: #ffebde;
+
+    transform: translateY(-3px);
+}
+
+
+.footer-social-text {
+
+    font-size: 14px !important;
+
+    color: #f4b4c8 !important;
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+
+    width: 100%;
+
+    background: #4d0e25;
+
+    padding: 25px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin: 0;
+
+    border: none;
+}
+
+
+/* Bottom navigation */
+
+.footer-bottom-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.footer-bottom-links a {
+
+    color: #e8cbd4;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-bottom-links a:hover {
+
+    color: white;
+}
+
+
+.footer-bottom p {
+
+    color: #d8bac4;
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .footer-main {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 50px;
+
+    }
+
+    .footer-social {
+
+        grid-column: 1 / -1;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .footer-main {
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 55px 25px;
+
+        gap: 50px;
+
+    }
+
+
+    .footer-map {
+
+        max-width: 100%;
+
+        height: 210px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+
+    }
+
+
+    .footer-bottom-links {
+
+        flex-wrap: wrap;
+
+        gap: 15px 25px;
+
+    }
+
+
+    .footer-bottom p {
+
+        text-align: left;
+
+    }
+
+}
+@media (max-width: 768px) {
+    .menu-profile-icons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    #menu-icon {
+        display: block;
+        font-size: 32px;
+        color: white;
+        cursor: pointer;
+    }
+    #user-profile {
+        font-size: 30px;
+        color: white;
+    }
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--bg-color);
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        display: block;
+        width: 100%;
+        padding: 12px 15px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    .navbar a:hover {
+        background: rgba(147, 6, 48, 0.08);
+    }
+    .navbar .booknow-btn {
+        margin-top: 5px;
+        padding: 11px 20px;
+    }
+    .banner-text {
+        font-size: 10vw;
+    }
+    .our-story-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
