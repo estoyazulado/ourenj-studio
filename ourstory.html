@@ -14,6 +14,7 @@
 
 </head>
 
+<body>
     <header>
 
         <a href="index.php" class="logo">
@@ -36,7 +37,7 @@
         </div>
 
     </header>
-<body>
+
     <!-- Content on page -->
     <section class="home" id="banner">
         <div class="home-banner">
@@ -46,172 +47,81 @@
         </div>
     </section>
 
-<!-- Our Story -->
-
-<section class="story-section">
-
-    <!-- Quote Banner -->
-    <div class="story-quote">
-        <h2>
-            Beauty is our passion,<br>
-            confidence is our purpose.
-        </h2>
-
-        <span></span>
-    </div>
-
-
-    <!-- About Area -->
-    <div class="story-about">
-
-        <!-- Portrait -->
-        <div class="story-image">
-
-            <img src="images/client_portrait.jpeg"
-                 alt="Mrs Fara - Ourenj Studio">
-
-        </div>
-
-
-        <!-- About Text -->
-        <div class="story-text">
-
-            <h2>About</h2>
-
-            <p>
-                Ourenj Studio started in 2023 with a simple goal:
-                to create an additional source of income while
-                pursuing a passion for beauty.
-            </p>
-
-            <p>
-                Before starting the business, Mrs. Fara was working
-                a regular 9-to-5 job and had no professional
-                experience in nail services. Determined to learn,
-                she joined a nail course and began building her
-                skills from the ground up.
-            </p>
-
-            <p>
-                What started as a side income gradually grew into
-                a business built around creativity, dedication,
-                and a genuine love for the craft.
-            </p>
-
-            <p>
-                Today, Ourenj Studio is independently run by
-                Kak Fara, who personally focuses on each client's
-                experience.
-            </p>
-
-            <p>
-                The name Ourenj Studio was inspired by the phrase
-                <strong>“Our Renjana.”</strong> Renjana represents
-                passion and love — reflecting the heart behind
-                the studio.
-            </p>
-
-            <h4>
-                Beauty made personal, with passion.
-            </h4>
-
-        </div>
-
-    </div>
-
-    <script src="ourenjstudio.js"></script>
-
-    <!-- Image Carousel -->
-
-    <div class="story-carousel">
-
-        <button
-            class="story-arrow story-prev"
-            type="button"
-            aria-label="Previous images">
-
-            <i class="bx bx-chevron-left"></i>
-
-        </button>
-
-
-        <div class="story-carousel-track">
-
-            <div class="story-circle">
-                <img src="images/story1.jpg"
-                     alt="Ourenj Studio gallery">
+    <main id="story-main">
+        <!-- 01 Founder introduction -->
+        <section class="story-founder" aria-labelledby="founder-title">
+            <div class="story-founder-photo">
+                <img src="images/client_portrait.jpeg" alt="Fara, founder of Ourenj Studio">
+                <span class="story-photo-label">THE FACE BEHIND OURENJ</span>
             </div>
-
-            <div class="story-circle">
-                <img src="images/story2.jpg"
-                     alt="Ourenj Studio gallery">
+            <div class="story-founder-copy">
+                <span class="story-eyebrow">THE HEART BEHIND OURENJ</span>
+                <h1 id="founder-title">Meet <em>Fara.</em></h1>
+                <div class="story-rule"></div>
+                <p class="story-lead">Every beautiful set begins with a little passion.</p>
+                <p>Ourenj Studio started in 2023 with a simple goal: to create an additional source of income while pursuing a passion for beauty.</p>
+                <p>Before starting the business, Fara worked a regular 9-to-5 job and had no professional experience in nail services. Determined to learn, she joined a nail course and began building her skills from the ground up.</p>
+                <p>Today, she independently runs Ourenj Studio, personally focusing on each client's experience.</p>
+                <p class="story-signature">Beauty made personal, with passion.</p>
             </div>
+        </section>
 
-            <div class="story-circle">
-                <img src="images/story3.jpg"
-                     alt="Ourenj Studio gallery">
+        <!-- 02 Our journey -->
+        <section class="story-journey" aria-labelledby="journey-title">
+            <div class="story-section-heading">
+                <span class="story-eyebrow">FROM PASSION TO PURPOSE</span>
+                <h2 id="journey-title">How It All Began</h2>
+                <p>What started as a side income grew into a business built around creativity, dedication and love for the craft.</p>
             </div>
-
-            <div class="story-circle">
-                <img src="images/story4.jpg"
-                     alt="Ourenj Studio gallery">
+            <div class="story-milestones">
+                <article class="story-milestone"><span class="story-step">01</span><h3>2023 · The Beginning</h3><p>Ourenj Studio began as a way to explore a love of beauty while creating extra income.</p></article>
+                <article class="story-milestone"><span class="story-step">02</span><h3>Learning the Craft</h3><p>With no previous nail-service experience, Fara took a course and built her skills step by step.</p></article>
+                <article class="story-milestone"><span class="story-step">03</span><h3>Made Personal</h3><p>Ourenj Studio is now independently run, with individual attention at the heart of every appointment.</p></article>
             </div>
+        </section>
 
-            <div class="story-circle">
-                <img src="images/story5.jpg"
-                     alt="Ourenj Studio gallery">
+        <!-- 03 Name meaning -->
+        <section class="story-meaning" aria-labelledby="meaning-title">
+            <span class="story-eyebrow">WHAT'S IN A NAME?</span>
+            <h2 id="meaning-title">Our <em>Renjana.</em></h2>
+            <p>The name <strong>Ourenj Studio</strong> was inspired by “Our Renjana.” Renjana represents passion and love — a reflection of the heart behind the studio.</p>
+            <div class="story-meaning-divider" aria-hidden="true">✦</div>
+            <p class="story-meaning-quote">Created with passion. Made just for you.</p>
+        </section>
+
+        <!-- 04 Gallery; carousel classes retained for existing JS -->
+        <section class="story-gallery" aria-labelledby="moments-title">
+            <div class="story-section-heading">
+                <span class="story-eyebrow">A LITTLE GLIMPSE</span>
+                <h2 id="moments-title">Moments at Ourenj</h2>
+                <p>Little details, creative moments, and a love for beautiful nails.</p>
             </div>
+            <div class="story-carousel">
+                <div class="story-carousel-track">
+                    <div class="story-circle"><img src="images/lash1.jpg" alt="Ourenj Studio moment 1" loading="lazy"></div>
+                    <div class="story-circle"><img src="images/story2.jpg" alt="Ourenj Studio moment 2" loading="lazy"></div>
+                    <div class="story-circle"><img src="images/story3.png" alt="Ourenj Studio moment 3" loading="lazy"></div>
+                    <div class="story-circle"><img src="images/story4.jpg" alt="Ourenj Studio moment 4" loading="lazy"></div>
+                    <div class="story-circle"><img src="images/story5.jpg" alt="Ourenj Studio moment 5" loading="lazy"></div>
+                </div>
+        
+            </div>
+        </section>
 
-        </div>
-
-
-        <button
-            class="story-arrow story-next"
-            type="button"
-            aria-label="Next images">
-
-            <i class="bx bx-chevron-right"></i>
-
-        </button>
-
-    </div>
-
-
-    <!-- Social Links -->
-
-    <div class="story-socials">
-
-        <a href="https://www.instagram.com/ourenjstudio/?hl=en"
-           target="_blank"
-           aria-label="Instagram">
-
-            <i class="bx bxl-instagram"></i>
-
-        </a>
-
-
-        <a href="https://www.tiktok.com/@ourenjstudio"
-           target="_blank"
-           aria-label="TikTok">
-
-            <i class="bx bxl-tiktok"></i>
-
-        </a>
-
-
-        <a href="https://www.threads.com/@ourenjstudio"
-           target="_blank"
-           aria-label="Threads">
-
-            <i class="bx bxl-threads"></i>
-
-        </a>
-
-    </div>
-
-</section>
+        <!-- 05 Booking invitation -->
+        <section class="story-invite" aria-labelledby="invite-title">
+            <span class="story-eyebrow">WE'D LOVE TO SEE YOU</span>
+            <h2 id="invite-title">Your Nail Journey <em>Starts Here.</em></h2>
+            <p>Come enjoy a personal beauty experience, created with care.</p>
+            <a class="story-book-link" href="booking.html">Book Your Appointment <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <div class="story-socials" aria-label="Follow Ourenj Studio">
+                <a href="https://www.instagram.com/ourenjstudio/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ourenjstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bx bxl-tiktok"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=60175795492" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+        </section>
+    </main>
 
     <script src="ourenjstudio.js"></script>
 </body>
-
 </html>

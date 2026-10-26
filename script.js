@@ -11,6 +11,21 @@ const galleryImages = [
     "images/gallery6.jpg"
 ];
 
+
+const galleryCaptions = [
+    "Custom Nail Art",
+    "Gel Extensions w/ Chrome",
+    "Trendy Polka Dot Extensions",
+    "Holographic Nails",
+    "Eccentric Nail Design",
+    "Trendy Nail Extensions"
+];
+
+const leftCaption = document.getElementById("gallery-left-caption");
+const centerCaption = document.getElementById("gallery-center-caption");
+const rightCaption = document.getElementById("gallery-right-caption");
+
+
 let currentIndex = 1;
 
 const leftImage = document.getElementById("gallery-left");
@@ -21,20 +36,22 @@ const previousButton = document.querySelector(".gallery-prev");
 const nextButton = document.querySelector(".gallery-next");
 
 
-function updateGallery() {
 
+function updateGallery() {
     const total = galleryImages.length;
 
-    const leftIndex =
-        (currentIndex - 1 + total) % total;
-
-    const rightIndex =
-        (currentIndex + 1) % total;
+    const leftIndex = (currentIndex - 1 + total) % total;
+    const rightIndex = (currentIndex + 1) % total;
 
     leftImage.src = galleryImages[leftIndex];
     centerImage.src = galleryImages[currentIndex];
     rightImage.src = galleryImages[rightIndex];
+
+    leftCaption.textContent = galleryCaptions[leftIndex];
+    centerCaption.textContent = galleryCaptions[currentIndex];
+    rightCaption.textContent = galleryCaptions[rightIndex];
 }
+
 
 
 nextButton.addEventListener("click", function () {
@@ -68,14 +85,11 @@ updateGallery();
 ========================= */
 
 const storyImages = [
-    "images/story1.jpg",
+    "images/lash1.jpg",
     "images/story2.jpg",
-    "images/story3.jpg",
+    "images/story3.png",
     "images/story4.jpg",
     "images/story5.jpg",
-    "images/story6.jpg",
-    "images/story7.jpg",
-    "images/story8.jpg"
 ];
 
 
@@ -85,16 +99,16 @@ const storyImageElements =
     );
 
 
-const storyPrevious =
-    document.querySelector(
-        ".story-prev"
-    );
+// const storyPrevious =
+//     document.querySelector(
+//         ".story-prev"
+//     );
 
 
-const storyNext =
-    document.querySelector(
-        ".story-next"
-    );
+// const storyNext =
+//     document.querySelector(
+//         ".story-next"
+//     );
 
 
 let storyStartIndex = 0;
@@ -123,42 +137,42 @@ function updateStoryCarousel() {
 }
 
 
-/* Next */
+// /* Next */
 
-storyNext.addEventListener(
-    "click",
-    function() {
+// storyNext.addEventListener(
+//     "click",
+//     function() {
 
-        storyStartIndex =
-            (
-                storyStartIndex + 1
-            )
-            % storyImages.length;
+//         storyStartIndex =
+//             (
+//                 storyStartIndex + 1
+//             )
+//             % storyImages.length;
 
-        updateStoryCarousel();
+//         updateStoryCarousel();
 
-    }
-);
+//     }
+// );
 
 
-/* Previous */
+// /* Previous */
 
-storyPrevious.addEventListener(
-    "click",
-    function() {
+// storyPrevious.addEventListener(
+//     "click",
+//     function() {
 
-        storyStartIndex =
-            (
-                storyStartIndex
-                - 1
-                + storyImages.length
-            )
-            % storyImages.length;
+//         storyStartIndex =
+//             (
+//                 storyStartIndex
+//                 - 1
+//                 + storyImages.length
+//             )
+//             % storyImages.length;
 
-        updateStoryCarousel();
+//         updateStoryCarousel();
 
-    }
-);
+//     }
+// );
 
 
 updateStoryCarousel();

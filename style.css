@@ -49,7 +49,8 @@ header {
     font-family: Helvetica, sans-serif;
     color: white;
     font-size: 20px;
-    line-height: 18px;
+    line-height: 1;
+    letter-spacing: -0.3;
     width: 120px;
     font-weight: normal;
     text-align: center
@@ -58,6 +59,7 @@ header {
 .logo span {
     display: block;
     font-family: Georgia, serif;
+    line-height: 1;
     font-weight: bold;
     text-align: center
 }
@@ -152,102 +154,126 @@ header {
     overflow: hidden;
 }
 
-/* Banner Image */
 .home-banner img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(75%);
+    filter: brightness(85%);
+    z-index: 0;
 }
 
-
-/* Banner Text */
-.home-banner h2 {
+.home-banner::before {
+    content: "";
     position: absolute;
-    top: 38%;
-    width: 100%;
-    text-align: center;
-
-    color: white;
-    font-family: "DM Serif Display", serif;
-    font-size: 55px;
-    font-weight: bold;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.30);
+    z-index: 1;
+    pointer-events: none;
 }
 
+/* Banner logo */
+.home-banner h2.banner-logo {
+    position: absolute;
+    top: 34%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
 
+/* STUDIO */
+.home-banner h2.banner-logo span {
+    display: block;
+    margin-top: 4px;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+/* Tagline */
 .home-banner h3 {
     position: absolute;
-    top: 52%;
+    top: 60%;
+    left: 0;
     width: 100%;
+    margin: 0;
     text-align: center;
-
     color: white;
     font-family: Teachers, sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: normal;
+    line-height: 1.4;
+    z-index: 2;
 }
 
 
 /* Banner Buttons */
 
+/* Button container */
 .banner-buttons {
     position: absolute;
-    top: 65%;
+    top: 72%;
     left: 0;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
+    z-index: 2;
 }
+
+/* Shared button styles */
 .book-home-btn,
 .services-home-btn {
-
-    position: absolute;
-    top: 65%;
-
-    padding: 12px 35px;
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    padding: 12px 25px;
     border-radius: 30px;
-
     font-family: Teachers, sans-serif;
-    font-size: 14px;
-
-    transition: .3s ease;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s ease;
 }
 
-
-/* Book button */
-
+/* Book Now */
 .book-home-btn {
-    left: 38%;
-
     background: #a20d3b;
-    color:white;
+    border: 2px solid #a20d3b;
 }
-
 
 .book-home-btn:hover {
-    background:#700628;
+    background: #700628;
+    border-color: #700628;
 }
 
-
-/* Services button */
-
+/* Transparent white Services button */
 .services-home-btn {
-
-    left: 53%;
-
-    border:2px solid white;
-    color:white;
+    background: rgba(255, 255, 255, 0.20);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
-
 
 .services-home-btn:hover {
-
-    background:white;
-    color:#930630;
-
+    background: rgba(255, 255, 255, 0.90);
+    color: #930630;
 }
 
 /* =========================
@@ -430,18 +456,6 @@ header {
 }
 
 
-/* Image cards */
-
-.gallery-card {
-    background: #f4f2ed;
-    border: 1px solid #999;
-    padding: 12px 12px 60px;
-    overflow: hidden;
-
-    transition: transform 0.35s ease,
-                opacity 0.35s ease;
-}
-
 
 /* Left and right */
 
@@ -450,22 +464,11 @@ header {
     height: 290px;
 }
 
-
 /* Big middle image */
 
 .center-card {
     width: 285px;
     height: 335px;
-}
-
-
-/* Images */
-
-.gallery-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 
@@ -490,6 +493,46 @@ header {
     color: #a20d3b;
     transform: scale(1.15);
 }
+
+/* Polaroid Frame */
+.gallery-card {
+    position: relative;
+    box-sizing: border-box;
+    background: #f4f2ed;
+    border: 1px solid #999;
+    padding: 12px 12px 55px;
+    overflow: hidden;
+
+    transition: transform 0.35s ease,
+                opacity 0.35s ease;
+}
+
+/* Polaroid Image */
+.gallery-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Caption inside the Polaroid */
+.gallery-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 8px;
+    right: 8px;
+
+    margin: 0;
+    color: var(--text-color);
+
+    font-family: "DM Serif Display", serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.3;
+    text-align: center;
+}
+
 
 /* =========================
    REVIEWS SECTION
@@ -526,60 +569,60 @@ header {
 /* Reviews wrapper */
 
 .reviews-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    max-width: 1250px;
-    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
 }
 
 
 /* All cards */
 
 .review-card {
-    background: #aa1249;
-    color: white;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 400px;
+
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
+    padding: 30px 24px;
+    border-radius: 12px;
+    background: #aa1249;
+    color: white;
     text-align: center;
-    padding: 35px 40px;
-    border-radius: 10px;
+
     box-shadow: 0 15px 25px rgba(95, 10, 40, 0.18);
 }
 
 
-/* Side cards */
 
-.review-side {
-    width: 390px;
-    height: 320px;
+.review-side,
+.review-main {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
     position: relative;
     z-index: 1;
 }
 
-
-/* Middle card */
-
-.review-main {
-    width: 500px;
-    min-height: 395px;
-
-    background: #aa1249;
-
-    position: relative;
-    z-index: 2;
-}
-
-
 /* User icon */
 
 .review-icon {
-    font-size: 70px;
+    flex-shrink: 0;
+    font-size: 58px;
     color: #ffebde;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
 
@@ -587,22 +630,22 @@ header {
 
 .review-card h3 {
     font-family: Teachers, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: normal;
+    line-height: 1.3;
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 
-/* Stars */
+/* Five star rating */
 
 .review-stars {
+    flex-shrink: 0;
     color: #ffd43b;
-
-    font-size: 39px;
+    font-size: 30px;
     letter-spacing: 3px;
-
-    line-height: 1;
+    line-height: 1.3;
     margin: 5px 0 20px;
 }
 
@@ -610,15 +653,17 @@ header {
 /* Review text */
 
 .review-card p {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+
     font-family: Teachers, sans-serif;
-
-    font-size: 17px;
-
-    line-height: 1.5;
-
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: normal;
     color: white;
 
-    max-width: 400px;
+    overflow-wrap: anywhere;
 }
 
 
@@ -633,13 +678,12 @@ header {
 }
 
 .gallery-banner {
-
-    width:100%;
-    height:400px;
-    margin:auto;
-    position:relative;
-    overflow:hidden;
-
+    width: 100%;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .gallery-banner img {
@@ -652,31 +696,18 @@ header {
 }
 
 .gallery-banner h2 {
-
-    position:absolute;
-    top:35%;
-    width:100%;
-    text-align:center;
-    color:#a20d3b;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: #fff;
     font-family: "Pinyon Script", cursive;
-    font-size:90px;
-    font-weight:normal;
-
-
-}
-
-
-.gallery-banner h4 {
-
-    position:absolute;
-    top:65%;
-    width:100%;
-    text-align:center;
-    color:#a20d3b;
-    font-family:Teachers;
-    font-size:20px;
-    letter-spacing:5px;
-
+    font-size: clamp(58px, 8vw, 96px);
+    font-weight: normal;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.78);
+    z-index: 2;
 }
 
 /* =========================
@@ -684,87 +715,258 @@ header {
 ========================= */
 
 
-#nav {
+section.gallery#banner {
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
 
-    padding:40px 0;
+#nav {
+    margin: 0;
+    padding: 0 0 25px;
+    background: var(--bg-color);
 }
 
 .gallery-nav {
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:50px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0 20px;
 }
 
 .gallery-nav a {
-
-    font-family:Teachers;
-    font-size:25px;
-    letter-spacing:3px;
-    color:#9b1745;
-
+    font-family: "Teachers", sans-serif;
+    font-size: clamp(20px, 2vw, 25px);
+    letter-spacing: 2px;
+    color: #9b1745;
+    transition: color 0.25s ease;
 }
 
 .gallery-nav a:first-child {
-
-    font-weight:bold;
-
+    font-weight: 700;
 }
 
 .gallery-nav span {
-
-    color:#9b1745;
-    font-size:35px;
-
+    color: #9b1745;
+    font-size: 30px;
+    line-height: 1;
 }
 
 /* =========================
-   GALLERY SECTION
+   GALLERY SECTION — MASONRY CARDS
 ========================= */
-
-
 .gallery-section {
-
-    padding:20px 7% 80px;
+    padding: 28px 5% 80px;
 }
 
 .gallery-section h2 {
-
-    text-align:center;
-    color:#8b2949;
-    font-family:Georgia,serif;
-    font-size:40px;
-    margin-bottom:40px;
-
+    text-align: center;
+    color: #8b2949;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 36px;
 }
 
-/* Masonry style */
-
+/* Three balanced columns on desktop; CSS columns preserve masonry. */
 .gallery-grid {
-
-    columns:3;
-    column-gap:25px;
-
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    columns: 3;
+    column-gap: 22px;
 }
 
-.gallery-grid img {
-
-    width:100%;
-    margin-bottom:25px;
-    border-radius:10px;
-    break-inside:avoid;
-    transition:.3s ease;
-
+.gallery-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0 0 22px;
+    padding: 8px 8px 0;
+    background: #fff;
+    border: 1px solid #eadde0;
+    border-radius: 7px;
+    box-shadow: 0 5px 16px rgba(77, 14, 19, 0.09);
+    break-inside: avoid;
+    cursor: zoom-in;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.gallery-grid img:hover {
-
-    transform:scale(1.03);
-
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(77, 14, 19, 0.14);
 }
 
+/* Preserve the full image ratio, but make each masonry card narrower. */
+.gallery-section .gallery-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+/* Captions are attached to the bottom of the white frame. */
+.gallery-section .gallery-caption {
+    position: static;
+    inset: auto;
+    display: block;
+    margin: 0;
+    padding: 11px 7px 13px;
+    color: #801638;
+    background: #fff;
+    font-family: "Teachers", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Gallery popup */
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 55px 24px 24px;
+    background: rgba(35, 10, 20, .92);
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.gallery-lightbox .lightbox-content {
+    max-width: min(76vw, 900px);
+    max-height: 88vh;
+    margin: 0;
+    padding: 10px 10px 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
+}
+
+.gallery-lightbox .lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 72vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+#lightbox-caption {
+    padding: 15px 10px;
+    color: #801638;
+    background: #fff;
+    font-family: "Teachers", sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    flex: 0 0 auto;
+    border: 0;
+    padding: 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 38px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    font-size: 44px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: #f3b7c3;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    transform: scale(1.12);
+}
+
+@media (max-width: 1000px) {
+    .gallery-grid {
+        columns: 2;
+        column-gap: 18px;
+        max-width: 780px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-section {
+        padding: 18px 5% 55px;
+    }
+
+    .gallery-section h2 {
+        font-size: 34px;
+        margin-bottom: 28px;
+    }
+
+    .gallery-grid {
+        columns: 2;
+        column-gap: 12px;
+    }
+
+    .gallery-item {
+        padding: 5px 5px 0;
+        margin-bottom: 13px;
+        border-radius: 5px;
+    }
+
+    .gallery-section .gallery-caption {
+        padding: 9px 3px 10px;
+        font-size: 11px;
+    }
+
+    .gallery-lightbox {
+        gap: 4px;
+        padding: 55px 7px 18px;
+    }
+
+    .gallery-lightbox .lightbox-content {
+        max-width: 78vw;
+    }
+
+    .gallery-lightbox .lightbox-content img {
+        max-height: 67vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 23px;
+        padding: 4px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 12px;
+        font-size: 38px;
+    }
+
+    #lightbox-caption {
+        padding: 11px 6px;
+        font-size: 13px;
+    }
+}
 
 /* ======================
    SERVICE BANNER
@@ -811,289 +1013,405 @@ header {
 
 }
 
-/* =========================
-   OUR STORY SECTION
-========================= */
 
-.story-section {
-    width: 100%;
-    background: var(--bg-color);
-    padding: 60px 8% 70px;
+/* =========================================
+   OUR STORY PAGE
+========================================= */
+
+#story-main {
+    font-family: Teachers, Arial, sans-serif;
+    color: var(--text-color);
 }
 
-
-/* Quote Banner */
-
-.story-quote {
-    max-width: 900px;
-    margin: 0 auto 25px;
-
-    background: #4d0e13;
-
-    text-align: center;
-
-    padding: 45px 30px;
-}
-
-
-.story-quote h2 {
-    font-family: "DM Serif Display", serif;
-
-    font-size: 38px;
-    font-weight: normal;
-
-    line-height: 1.25;
-
-    color: #faeced;
-}
-
-
-.story-quote span {
+#story-main .story-eyebrow {
     display: block;
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
 
-    width: 70px;
-    height: 2px;
+#story-main h1,
+#story-main h2,
+#story-main h3 {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-weight: 400;
+}
 
-    background: #4d0e13;
-
-    margin: 18px auto 0;
+#story-main em {
+    font-weight: 400;
 }
 
 
-/* About Area */
+/* Meet Founder */
 
-.story-about {
-    max-width: 900px;
-
-    margin: auto;
+.story-founder {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 65px 35px 105px;
 
     display: grid;
-
-    grid-template-columns: 1fr 1.12fr;
-
-    gap: 15px;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: clamp(40px, 7vw, 110px);
+    align-items: center;
 }
 
+/* Founder Image */
 
-/* Left image */
-
-.story-image {
-    width: 100%;
-    height: 500px;
-
-    overflow: hidden;
+.story-founder-photo {
+    position: relative;
+    min-width: 0;
 }
 
-
-.story-image img {
-    width: 100%;
-    height: 100%;
-
+.story-founder-photo img {
     display: block;
-
+    width: 100%;
+    height: 595px;
     object-fit: cover;
 }
 
+.story-photo-label {
+    position: absolute;
+    bottom: -16px;
+    right: -17px;
 
-/* Right text */
+    background: var(--main-color);
+    color: white;
+    padding: 17px 23px;
 
-.story-text {
-    background: #4d0e13;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
 
-    padding: 35px 45px;
+/* Founder Text */
 
-    display: flex;
+.story-founder-copy h1 {
+    font-size: clamp(43px, 5vw, 70px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
 
-    flex-direction: column;
+.story-founder-copy h1 em {
+    color: var(--main-color);
+}
 
-    justify-content: center;
+.story-rule {
+    width: 58px;
+    height: 2px;
+    background: var(--main-color);
+    margin-bottom: 27px;
+}
 
+.story-founder-copy p {
+    font-size: 15px;
+    line-height: 1.95;
+    margin-bottom: 16px;
+    color: #78404a;
+}
+
+.story-founder-copy .story-lead {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--text-color);
+}
+
+.story-founder-copy .story-signature {
+    margin: 28px 0 0;
+
+    font-family: "DM Serif Display", serif;
+    font-size: 23px;
+    font-style: italic;
+    color: var(--main-color);
+}
+
+
+/* Our Journey */
+
+.story-journey {
+    background: #f3ded7;
+    padding: 90px 7% 100px;
+}
+
+/* Section Heading */
+
+.story-section-heading {
     text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
 }
 
-
-.story-text h2 {
-    font-family: "DM Serif Display", serif;
-
-    font-size: 39px;
-
-    font-weight: normal;
-
-    color: #fff6f9;
-
-    margin-bottom: 24px;
+.story-section-heading h2 {
+    font-size: clamp(37px, 4vw, 54px);
+    margin-bottom: 15px;
 }
 
-
-.story-text p {
-    font-family: Teachers, Arial, sans-serif;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    color: #fff5f9;
-
-    margin-bottom: 14px;
-}
-
-
-
-.story-text h4 {
-    font-family: "DM Serif Display", serif;
-
+.story-section-heading p {
+    color: #78404a;
     font-size: 16px;
-
-    font-weight: normal;
-
-    color: #fff9fb;
-
-    margin-top: 8px;
+    line-height: 1.8;
 }
 
+/* Journey Layout */
 
-/* Story Carousel */
+.story-milestones {
+    max-width: 1100px;
+    margin: auto;
 
-.story-carousel {
-    max-width: 950px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+}
 
-    margin: 20px auto 0;
+/* Journey Item */
 
-    display: flex;
+.story-milestone {
+    position: relative;
+    text-align: center;
+    padding: 32px 22px 18px;
+    border-top: 1px solid #bc8592;
+}
+
+.story-step {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
 
     justify-content: center;
-
     align-items: center;
 
-    gap: 12px;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    background: #f3ded7;
+    color: var(--main-color);
+
+    font-family: "DM Serif Display", serif;
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.story-milestone h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.story-milestone p {
+    color: #78404a;
+    font-size: 14px;
+    line-height: 1.85;
 }
 
 
-/* Holds exactly five images */
+/* Meaning */
+
+.story-meaning {
+    background: var(--text-color);
+    color: #fff8f2;
+
+    text-align: center;
+    padding: 95px 24px;
+}
+
+#story-main .story-meaning .story-eyebrow {
+    color: #f3b7c3;
+}
+
+.story-meaning h2 {
+    font-size: clamp(53px, 7vw, 93px);
+    margin-bottom: 25px;
+}
+
+.story-meaning h2 em {
+    color: #f3b7c3;
+}
+
+.story-meaning > p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: #f7e4e0;
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+.story-meaning-divider {
+    color: #f3b7c3;
+    font-size: 27px;
+    margin: 25px auto 18px;
+}
+
+.story-meaning .story-meaning-quote {
+    font-family: "DM Serif Display", serif;
+    font-size: 23px;
+    font-style: italic;
+    color: white;
+}
+
+
+/* Story Gallery */
+
+.story-gallery {
+    padding: 95px 4% 100px;
+}
+
+/* Carousel Container */
+
+.story-carousel {
+    max-width: 1240px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Image Track */
 
 .story-carousel-track {
     flex: 1;
+    min-width: 0;
 
     display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    align-items: center;
-
-    gap: 18px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 14px;
 }
 
-
-/* Circular images */
+/* Gallery Images */
 
 .story-circle {
-    aspect-ratio: 1 / 1;
-
-    border-radius: 50%;
-
+    aspect-ratio: 3 / 4;
+    border-radius: 2px;
     overflow: hidden;
-
     background: #edcfd1;
 
-    border: 4px solid
-        rgba(255, 255, 255, 0.65);
-
-    transition: 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
-
 
 .story-circle img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
-
 .story-circle:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(77, 14, 19, 0.17);
+}
 
-    box-shadow:
-        0 10px 20px
-        rgba(77, 14, 19, 0.15);
+/* Carousel Arrows */
+
+.story-arrow {
+    width: 35px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+
+    font-size: 38px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.story-arrow:hover {
+    transform: scale(1.15);
+    color: var(--main-color);
 }
 
 
-/* Carousel arrows */
+/* Book Invite */
 
-.story-arrow {
-    border: none;
+.story-invite {
+    background: #f3ded7;
+    padding: 95px 20px 85px;
+    text-align: center;
+}
 
-    background: transparent;
+.story-invite h2 {
+    max-width: 760px;
+    margin: 0 auto 16px;
+    font-size: clamp(37px, 5vw, 65px);
+}
 
-    color: #4d0e13;
+.story-invite h2 em {
+    color: var(--main-color);
+}
 
-    cursor: pointer;
+.story-invite > p {
+    color: #78404a;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
 
+/* Booking Button */
+
+.story-book-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: var(--main-color);
+    color: white;
+    padding: 16px 29px;
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.story-book-link:hover {
+    background: #740524;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.story-book-link i {
+    font-size: 20px;
+}
+
+
+/* Social Media Icons */
+
+.story-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.story-socials a {
     width: 42px;
     height: 42px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    border: 1px solid #a76576;
+    border-radius: 50%;
 
-    font-size: 42px;
-
-    transition: 0.25s ease;
-}
-
-
-.story-arrow:hover {
-    color: #4d0e13;
-
-    transform: scale(1.15);
-}
-
-
-/* Social Media */
-
-.story-socials {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-top: 30px;
-}
-
-
-.story-socials a {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #4d0e13;
-
-    color: white;
-
+    color: var(--text-color);
     font-size: 21px;
-
-    border-radius: 4px;
-
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
-
 
 .story-socials a:hover {
-    background: #801638;
-
+    background: var(--main-color);
+    border-color: var(--main-color);
+    color: white;
     transform: translateY(-3px);
 }
 
@@ -1283,29 +1601,35 @@ header {
 
 }
 
-.booking-card{
+.booking-card {
+    background: #f8d6bd;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .3s ease;
 
-    background:#f8d6bd;
-    border-radius:20px;
-    overflow:hidden;
-    transition:.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .booking-card:hover{
     transform:translateY(-8px);
 }
 
-.booking-card img{
-
-    width:100%;
-    height:220px;
-    object-fit:cover;
+.booking-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 
-.booking-content{
-
-    padding:25px;
+.booking-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .booking-content h2{
@@ -1323,13 +1647,14 @@ header {
     font-size:17px;
 }
 
-.booking-bottom{
+.booking-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
 
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap:25px;
-    margin-top:25px;
+    margin-top: auto;
+    padding-top: 25px;
 }
 
 .booking-bottom h3{
@@ -1512,20 +1837,14 @@ header {
 .footer-book-btn {
 
     display: block;
-
     width: fit-content;
-
     background: #ffebde;
-
     color: #801638;
-
     padding: 12px 24px;
-
     border-radius: 25px;
-
     font-size: 14px;
     font-weight: 600;
-
+    margin: 0 auto;
     transition: 0.3s ease;
 }
 
@@ -1539,30 +1858,15 @@ header {
 
 
 /* =========================
-   SOCIAL MEDIA
+   SOCIAL ICONS
 ========================= */
-
-.footer-social > p {
-
-    max-width: 300px;
-
-    margin-bottom: 24px;
-}
-
-
-/* Icons */
-
 .social-icons {
-
     display: flex;
-
     align-items: center;
-
+    justify-content: center;
     gap: 13px;
-
     margin-bottom: 18px;
 }
-
 
 .social-icons a {
 
@@ -1593,8 +1897,6 @@ header {
 
     color: #801638;
 
-    border-color: #ffebde;
-
     transform: translateY(-3px);
 }
 
@@ -1602,7 +1904,7 @@ header {
 .footer-social-text {
 
     font-size: 14px !important;
-
+    text-align: center;
     color: #f4b4c8 !important;
 }
 
@@ -1758,16 +2060,19 @@ header {
         align-items: center;
         gap: 12px;
     }
+
     #menu-icon {
         display: block;
         font-size: 32px;
         color: white;
         cursor: pointer;
     }
+
     #user-profile {
         font-size: 30px;
         color: white;
     }
+
     .navbar {
         display: none;
         position: absolute;
@@ -1782,9 +2087,11 @@ header {
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     }
+
     .navbar.active {
         display: flex;
     }
+
     .navbar a {
         display: block;
         width: 100%;
@@ -1793,19 +2100,176 @@ header {
         font-size: 14px;
         border-radius: 10px;
     }
+
     .navbar a:hover {
         background: rgba(147, 6, 48, 0.08);
     }
+
     .navbar .booknow-btn {
         margin-top: 5px;
         padding: 11px 20px;
     }
+
     .banner-text {
         font-size: 10vw;
     }
+
     .our-story-content {
         display: flex;
         flex-direction: column;
     }
+}
 
+
+
+/* Keep banner images behind the dark readability overlay and title. */
+.gallery-banner,
+.home-banner,
+.service-banner,
+.booking-banner {
+    position: relative;
+    isolation: isolate;
+}
+
+
+.gallery-banner::before,
+.home-banner::before,
+.service-banner::before,
+.booking-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.home-banner::before {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+
+.gallery-banner img,
+.home-banner img,
+.service-banner img,
+.booking-banner img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Gallery uses the same elegant cursive title as the rest of the pages. */
+.gallery-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gallery-banner h2,
+.gallery-banner h4 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.78);
+}
+
+.gallery-banner h2 {
+    font-family: "Pinyon Script", cursive;
+    font-size: clamp(58px, 8vw, 96px);
+    font-weight: normal;
+    line-height: 1.12;
+}
+
+.gallery-banner h4 {
+    margin-top: 3px;
+    font-family: "Teachers", sans-serif;
+    font-size: clamp(13px, 1.7vw, 20px);
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+/* Center the single banner title on Our Story, Services and Booking. */
+.home-banner > h2:not(.banner-logo),
+.service-banner h1,
+.booking-banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 32px);
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Pinyon Script", cursive;
+    font-size: clamp(58px, 8vw, 96px);
+    font-weight: normal;
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.78);
+    z-index: 2;
+}
+
+/* Preserve the separate homepage logo treatment if this shared CSS is used there. */
+.home-banner h2.banner-logo {
+    z-index: 2;
+}
+
+/* Small screens: retain centered titles without letting them crowd the banner. */
+@media (max-width: 600px) {
+    .gallery-banner,
+    .service-banner,
+    .booking-banner {
+        height: 320px;
+    }
+
+    .home-banner {
+        height: 320px;
+    }
+
+    .gallery-banner h2,
+    .home-banner > h2:not(.banner-logo),
+    .service-banner h1,
+    .booking-banner h1 {
+        font-size: clamp(48px, 13vw, 72px);
+    }
+
+    .gallery-banner h4 {
+        letter-spacing: 3px;
+    }
+}
+
+
+/* Fix Gallery banner height only */
+section.gallery#banner {
+    height: 420px !important;
+    min-height: 420px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/* Make the banner image fill the shorter area */
+section.gallery#banner .gallery-banner {
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0;
+}
+
+/* Keep category navigation directly below the banner */
+#nav {
+    margin-top: 0 !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

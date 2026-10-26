@@ -57,7 +57,8 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
         <div class="home-banner">
 
             <img src="images/ourenj-home.jpg">
-            <h2>Ourenj Studio</h2>
+            <h2 class="banner-logo">
+            OURENJ<span>STUDIO</span></h2>
             <h3>Beauty, made personal.</h3>
             <div class="banner-buttons">
                 <a href="booking.html" class="book-home-btn">Book Now!</a>
@@ -133,21 +134,40 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
             &#8592;
         </button>
 
-        <div class="gallery-carousel-images">
 
-            <div class="gallery-card side-card">
-                <img id="gallery-left" src="images/gallery1.jpg" alt="Gallery image">
-            </div>
+<div class="gallery-carousel-images">
 
-            <div class="gallery-card center-card">
-                <img id="gallery-center" src="images/gallery2.jpg" alt="Gallery image">
-            </div>
+    <div class="gallery-card side-card">
+        <img id="gallery-left"
+             src="images/gallery1.jpg">
 
-            <div class="gallery-card side-card">
-                <img id="gallery-right" src="images/gallery3.jpg" alt="Gallery image">
-            </div>
 
-        </div>
+        <p class="gallery-caption" id="gallery-left-caption">
+
+        </p>
+    </div>
+
+    <div class="gallery-card center-card">
+        <img id="gallery-center"
+             src="images/gallery2.jpg">
+
+        <p class="gallery-caption" id="gallery-center-caption">
+
+        </p>
+    </div>
+
+    <div class="gallery-card side-card">
+        <img id="gallery-right"
+             src="images/gallery3.jpg">
+
+        <p class="gallery-caption" id="gallery-right-caption">
+
+        </p>
+    </div>
+
+</div>
+
+
 
         <button class="gallery-arrow gallery-next" 
                 type="button" 
@@ -172,16 +192,14 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
 
             <i class="bx bxs-user-circle review-icon"></i>
 
-            <h3>Sarah</h3>
+            <h3>Amani</h3>
 
             <div class="review-stars">
                 ★★★★★
             </div>
 
             <p>
-                So clean, great greet from nail tech and
-                beautiful nails as a result. Will come here often
-                because of friendly service!
+ive been doing my nails with farah for 1year++ dah and im always satisfied with her work. her work is very clean and detailed. work station dia pon very clean. would definitely recommend to come to her!! (i pernah buat lash lift jugak and tahan lama gilaa)
             </p>
 
         </div>
@@ -191,17 +209,14 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
 
             <i class="bx bxs-user-circle review-icon"></i>
 
-            <h3>Pavitra</h3>
+            <h3>Wardah</h3>
 
             <div class="review-stars">
                 ★★★★★
             </div>
 
             <p>
-                I’ve had such a wonderful experience at this salon!
-                The staff is super kind and skilled, and they make you 
-                feel comfortable right away. The results are always beautiful, 
-                and I’m never disappointed. This is my go to beauty salon and I recommend it to everyone!
+               had such a great experience here removing my nails extension and lash lifts🤍 everything was done so gently and comfortably that i literally fell asleep during the session😭😭 farah was so soft spoken and careful and the result turned out so beautiful. definitely one of the most relaxing appointments i’ve ever had!!
             </p>
 
         </div>
@@ -211,15 +226,14 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
 
             <i class="bx bxs-user-circle review-icon"></i>
 
-            <h3>Safia</h3>
+            <h3>Saqinah</h3>
 
             <div class="review-stars">
                 ★★★★★
             </div>
 
             <p>
-                Recommended! The staff is very friendly and very good
-                workmanship. Worth the price. Will come again!
+Absolutely loved my experience doing my nails here! Farah is such a meticulous and dedicated nail tech, always delivering good results based on my inspos. 3 hours went by fast when you have a fun company while pampering yourself
             </p>
 
         </div>
@@ -244,12 +258,12 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
             <h3>Our Studio</h3>
 
             <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.7027686602273!2d101.7665596!3d2.9017081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc9c6e4ede543%3A0x1df550b66139e08b!2sCerrado%20%40%20Southville%20City!5e0!3m2!1sen!2smy!4v1791419745354!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6984297084377!2d101.7662352!3d2.9029387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc98624e07065%3A0xdf638442217b174a!2sOurenj%20Studio!5e0!3m2!1sen!2smy!4v1792935473327!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <p>
                 <i class="bx bx-phone"></i>
-                +60 12-345 6789
+                +6017-579 5492
             </p>
 
             <p>
@@ -310,10 +324,6 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
                     <i class="bx bxl-whatsapp"></i>
                 </a>
 
-                <a href="https://www.threads.com/@ourenjstudio"
-                   aria-label="Threads">
-                    <i class="bxl bx-threads"></i>
-                </a>
 
             </div>
 
