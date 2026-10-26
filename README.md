@@ -1,4 +1,4 @@
-# Ourenj Studio Website Front-End
+# Ourenj Studio Website (Front-End)
 
 A responsive beauty studio website designed to showcase Ourenj Studio's nail, lash, and brow services, display beauty artwork, and help customers explore services and make bookings.
 
